@@ -5,4 +5,4 @@ select
 --from {{source('stripe','payment')}}
 from {{ ref('stg_stripe__payment') }}
 group by 1
-having sum(amount) < 0
+having (sum(amount) < 0)
